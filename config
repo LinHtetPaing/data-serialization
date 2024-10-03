@@ -1,0 +1,17 @@
+database: &common_database
+  host: db.example.net
+  port: 3306
+  enable: true
+  legacy: yes
+
+database_new: *common_database
+
+prod_db:
+  <<: *common_database
+  host: prod-db.example.com
+  enable: false
+
+dev_db:
+  <<: *common_database
+  host: dev-db.example.com
+  enable: true
